@@ -1,0 +1,6 @@
+<main class="page-main">
+<% page.posts.each(function(post){ %>
+  <%- partial('_partials/post', {post: post}) %>
+<% }) %>
+</main>
+<%- partial('_partials/page-footer') %>

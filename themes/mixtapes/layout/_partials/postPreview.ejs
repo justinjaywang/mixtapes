@@ -1,0 +1,8 @@
+<article class="postPreview" data-post-id="<%= post._id %>">
+  <header class="postPreview-header">
+    <a class="postPreview-link" href="<%- url_for(post.path) %>">
+      <h2 class="postPreview-title"><%= post.title %></h2>
+      <%- partial('post-date', {date_format: config.date_format}) %>
+    </a>
+  </header>
+</article>
