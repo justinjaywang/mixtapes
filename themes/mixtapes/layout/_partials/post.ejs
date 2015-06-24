@@ -1,4 +1,5 @@
 <article class="post" data-post-id="<%= post._id %>">
+  <figure class="post-cover" style="background-image: url('cover.jpg')"></figure>
   <header class="post-header">
     <a href="<%- url_for(post.path) %>">
       <h1 class="post-title"><%= post.title %></h1>
@@ -7,8 +8,5 @@
   <section class="post-content">
     <%- post.content %>
   </section>
-  <footer class="post-footer">
-    <%- partial('post-date', {date_format: config.date_format}) %>
-    <%- partial('post-tag') %>
-  </footer>
+  <%- partial('post-meta') %>
 </article>
