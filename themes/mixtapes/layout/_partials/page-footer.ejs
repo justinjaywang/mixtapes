@@ -1,20 +1,8 @@
 <% if (page.total > 1){ %>
   <footer class="page-footer">
-    <nav class="nav nav--pagination">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <% if (page.prev){ %>
-          <a href="<%- config.root %><%- page.prev_link %>" class="nav-link"><%= __('Previous') %></a>
-          <% } %>
-        </li>
-        <li class="nav-item">
-          <a href="<%- config.root %><% if (page.prev) { %><%- page.prev_link %><% } else if (page.next) { %><%- page.next_link %><% } %>" class="nav-link"><%= page.current %> <%= __('of') %> <%= page.total %></a>
-        </li>
-        <li class="nav-item">
-          <% if (page.next){ %>
-          <a href="<%- config.root %><%- page.next_link %>" class="nav-link"><%= __('Next') %></a>
-          <% } %>
-        </li>
+    <nav class="nav">
+      <ul class="page-footer-list">
+        <li class="page-footer-list-item">Page <%= page.current %> <%= __('of') %> <%= page.total %></li><% if (page.prev){ %><li class="page-footer-list-item"><a href="<%- config.root %><%- page.prev_link %>" class="page-footer-link"><%= __('Previous') %></a></li><% } %><li class="page-footer-list-item"><% if (page.next){ %><a href="<%- config.root %><%- page.next_link %>" class="page-footer-link"><%= __('Next') %></a><% } %></li>
       </ul>
     </nav>
   </footer>

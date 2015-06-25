@@ -1,21 +1,25 @@
 // colors
 // : variables
-@color-gray-darker:  hsl(0,0%,10%);
-@color-gray-dark:    hsl(0,0%,40%);
-@color-gray:         hsl(0,0%,60%);
-@color-gray-light:   hsl(0,0%,80%);
-@color-gray-lighter: hsl(0,0%,90%);
-@color-white:        hsl(0,0%,100%);
+@color-gray-darkest:  rgba(0,0,0,0.8);
+@color-gray-darker:   rgba(0,0,0,0.6);
+@color-gray-dark:     rgba(0,0,0,0.6);
+@color-gray:          rgba(0,0,0,0.44);
+@color-gray-light:    rgba(0,0,0,0.28);
+@color-gray-lighter:  rgba(0,0,0,0.15);
+@color-gray-lightest: rgba(0,0,0,0.04);
+@color-white:         rgb(255,255,255);
 // : applications
 @background-color--body:        @color-white;
-@color--body:                   @color-gray-darker;
+@color--body:                   @color-gray-darkest;
 @color--a:                      inherit;
 @color--h1:                     inherit;
 @color--h2:                     inherit;
+@color--page-title:             @color-gray-darkest;
 @color--page-header-list-item:  @color-gray-light;
-@color--post-content-list-item: @color-gray;
-@color--post-cover-border:      fade(black, 7.5%);
+@color--post-content-list-item: @color-gray-light;
+@color--post-cover-border:      @color-gray-lightest;
 @color--post-meta:              @color-gray;
+@color--divider:                @color--page-header-list-item;
 
 // sizing
 @size-tera:         3;
@@ -66,27 +70,35 @@
 @font-size--html:     @font-size-px-base;
 @font-size--html-sm:  @font-size-px-base-sm;
 @font-size--body:     @size-em-base;
-@font-size--h1:       @size-em-giga;
+@font-size--h1:       @size-em-mega;
 @font-size--h2:       @size-em-mega;
 @font-size--headings: @size-em-base;
 // : font-family-variables
-@font-family-sans-serif: "Franklin Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:      Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:  Consolas, Monaco, "Andale Mono", monospace;
+@font-family-sans-serif:     "Franklin Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:          Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:      monospace;
+@font-family-sans-serif-alt: sans-serif;
 // : font-family-applications
-@font-family--body:     @font-family-sans-serif;
-@font-family--headings: @font-family-sans-serif;
+@font-family--body:            @font-family-serif;
+@font-family--h1:              @font-family-sans-serif;
+@font-family--h2:              @font-family-sans-serif;
+@font-family--headings:        @font-family-sans-serif;
+@font-family--post-meta:       @font-family-sans-serif;
+@font-family--post-date-after: @font-family-sans-serif;
+@font-family--strong:          @font-family-sans-serif;
 // : font-weight-variables
-@font-weight-bold:   700;
-@font-weight-normal: 400;
+@font-weight-bold:      700;
+@font-weight-normal:    400;
+@font-weight-semilight: 300;
 // : font-weight-applications
-@font-weight--body:     @font-weight-normal;
-@font-weight--h1:       @font-weight-bold;
-@font-weight--h2:       @font-weight-bold;
-@font-weight--headings: @font-weight-bold;
+@font-weight--body:      @font-weight-normal;
+@font-weight--h1:        @font-weight-bold;
+@font-weight--h2:        @font-weight-bold;
+@font-weight--headings:  @font-weight-bold;
+@font-weight--post-meta: @font-weight-normal;
 // : line-height-variables
-@line-height-tight: 1; // TO DO: adjust these
-@line-height-base:  1.3;
+@line-height-tight: 1.2; // TO DO: adjust these
+@line-height-base:  1.4;
 @line-height-loose: 1.5;
 // : line-height-applications
 @line-height--body:     @line-height-base;
@@ -94,14 +106,20 @@
 @line-height--h2:       @line-height-tight;
 @line-height--headings: @line-height-tight;
 // : letter-spacing-variables
-@letter-spacing-tight: -0.02em; // TO DO: adjust these
+@letter-spacing-tight: -0.01em; // TO DO: adjust these
 @letter-spacing-base:  0;
-@letter-spacing-loose: 0.01em;
+@letter-spacing-loose: 0.04em;
 // : letter-spacing-applications
 @letter-spacing--body:     @letter-spacing-base;
-@letter-spacing--h1:       @letter-spacing-tight;
-@letter-spacing--h2:       @letter-spacing-tight;
-@letter-spacing--headings: @letter-spacing-tight;
+@letter-spacing--h1:       @letter-spacing-base;
+@letter-spacing--h2:       @letter-spacing-base;
+@letter-spacing--headings: @letter-spacing-base;
+// : font-style-applications
+@font-style--h1: none;
+@font-style--h2: none;
+// : text-transform-applications
+@text-transform--h1: none;
+@text-transform--h2: none;
 
 // screen widths
 @width-screen-lg-min: 768px;
@@ -109,7 +127,7 @@
 
 // layout
 @container-gutter:     1rem;
-@max-width--container: 39rem; // a comfortable measure
+@max-width--container: 40rem; // a comfortable measure
 
 // spacing and miscellaneous
 // : utility
@@ -119,24 +137,29 @@
 @computed-line-height--headings: unit((unit(@font-size--headings) * @line-height--headings), rem);
 @line-height:                    @computed-line-height--body;
 // : applications
-@margin-top--page-header:               (@line-height * 2);
-@margin-bottom--page-header:            (@line-height * 2);
-@margin-top--page-main:                 (@line-height * 4);
-@margin-bottom--page-main:              (@line-height * 4);
-@margin-top--postPreview:               (@line-height * 2);
-@margin-bottom--postPreview:            (@line-height * 2);
+@margin-top--page-header:               (@line-height * 1);
+@margin-bottom--page-header:            (@line-height * 1);
+@padding-right--page-header-list-item:  @size-rem-small;
+@margin-top--page-main:                 (@line-height * 2);
+@margin-bottom--page-main:              (@line-height * 8);
+@margin-top--postPreview:               (@line-height * 0);
+@margin-bottom--postPreview:            (@line-height * 0); // (@line-height * 1.5);
 @margin-bottom--post-cover:             (@line-height * 1);
 @margin-top--post:                      (@line-height * 0);
-@margin-bottom--post:                   (@line-height * 6);
-@margin-top--h1:                        ((@line-height * 2) - @computed-line-height--h1);
-@margin-bottom--h1:                     (@line-height * 1);
+@margin-bottom--post:                   (@line-height * 8);
+@margin-top--page-footer:               (@margin-bottom--post - @margin-bottom--page-main);
+@margin-bottom--page-footer:            (@line-height * 2);
+@margin-top--h1:                        (@line-height * 0.5);
+@margin-bottom--h1:                     ((@line-height * 2) - @computed-line-height--h1);
 @margin-top--h2:                        0;
-@margin-bottom--h2:                     ((@line-height * 1.5) - @computed-line-height--h2);
-@margin-bottom--p:                      (@line-height * 1);
-@padding-left--post-content-list:       2.25rem;
-@width--post-content-list-item:         3rem;
+@margin-bottom--h2:                     ((@line-height * 2) - @computed-line-height--h2);
+@margin-bottom--post-content-base:      (@line-height * 1);
+@padding-left--post-content-list:       1.8rem;
+@width--post-content-list-item:         2.4rem;
 @left--post-content-list-item:          -@width--post-content-list-item;
 @margin-right--post-content-list-item:  -@width--post-content-list-item;
-@padding-right--post-content-list-item: (@width--post-content-list-item / 4);
+@padding-right--post-content-list-item: (@width--post-content-list-item - @padding-left--post-content-list);
 @content--post-date-after:              '\0020·\0020';
 @content--post-tag-after:               ',';
+// @height--divider:                       0.18rem;
+// @width--divider:                        1.25rem;
