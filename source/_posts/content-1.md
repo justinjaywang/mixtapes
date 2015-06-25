@@ -1,19 +1,9 @@
-title: "The Grapevine"
-date: 2015-06-23 13:49:45
+title: Songs that make you feel infinite
+date: 2015-06-23 17:12:35
 tags:
-- driving
-- California
+- test tag
+- another tag
 artists:
-- Yo La Tengo
-- Arcade Fire
-- Phantom Planet
-- Coconut Records
-- Pavement
-- Sufjan Stevens
-- M83
-- Led Zeppelin
-- Jackson Browne
-- Belle & Sebastian
 ---
 
 - Yo La Tengo - Little Honda (I Can Hear the Heart Beating as One)
