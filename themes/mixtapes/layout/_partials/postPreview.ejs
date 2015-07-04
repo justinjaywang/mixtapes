@@ -1,5 +1,6 @@
-<li class="postPreview" data-post-id="<%= post._id %>">
+<article class="postPreview" data-post-id="<%= post._id %>">
   <a class="postPreview-link" href="<%- url_for(post.path) %>">
-    <span class="postPreview-title"><%= post.title %></span>
+    <figure class="postPreview-cover" style="background-image: url('<%- url_for(post.path) %>cover.png')"></figure>
+    <h2 class="postPreview-title"><%= post.title %></h2>
   </a>
-</li>
+</article>

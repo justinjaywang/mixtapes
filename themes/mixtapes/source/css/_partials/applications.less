@@ -78,22 +78,25 @@ strong {
 // layout
 .container {
   width: 100%;
-  max-width: @max-width--container;
   .margin-center();
   padding-left: @container-gutter;
   padding-right: @container-gutter;
 }
-.page-header,
-.page-main,
-.page-footer {
+.container--wide {
+  max-width: @max-width--container--wide;
   &:extend(.container);
 }
-
-// utilities
-.divider {
-  color: @color--divider;
-  content: '—';
-  display: block;
+.container--narrow {
+  max-width: @max-width--container--narrow;
+  &:extend(.container);
+}
+.page-header,
+.page-footer,
+.page-main--index {
+  &:extend(.container--wide);
+}
+.page-main--post {
+  &:extend(.container--narrow);
 }
 
 // headers and footers
@@ -108,12 +111,7 @@ strong {
 .page-header,
 .page-footer {
   &:extend(h2);
-}
-.page-header:after {
-  &:extend(.divider);
-}
-.page-footer:before {
-  &:extend(.divider);
+  text-align: center;
 }
 .page-header-list-item,
 .page-footer-list-item {
@@ -123,9 +121,6 @@ strong {
 .page-header-list-item:not(:last-child),
 .page-footer-list-item:not(:last-child) {
   padding-right: @padding-right--page-header-list-item;
-}
-.page-title {
-  color: @color--page-title;
 }
 
 // post components
@@ -145,15 +140,21 @@ strong {
   margin-top: @margin-top--post;
   margin-bottom: @margin-bottom--post;
 }
+.postPreview-cover,
 .post-cover {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #ccc; // TEMP
+  background-color: @background-color--post-cover;
   height: 0;
   width: 100%;
   padding-bottom: 100%;
   .box-shadow(inset 0 0 0 1px @color--post-cover-border);
+}
+.postPreview-cover {
+  margin-bottom: @margin-bottom--postPreview-cover;
+}
+.post-cover {
   margin-bottom: @margin-bottom--post-cover;
 }
 .post-meta > * {
@@ -169,24 +170,10 @@ strong {
 .post-tag:not(:last-child):after {
   content: @content--post-tag-after;
 }
-.page-main ol,
-.page-main ul {
-  padding-left: @padding-left--post-content-list;
-  list-style-type: none;
-  counter-reset: decimal-counter;
-}
-.page-main ol li:before,
-.page-main ul li:before {
-  content: counter(decimal-counter);
-  counter-increment: decimal-counter;
-  position: relative;
-  text-align: right;
-  display: inline-block;
-  color: @color--post-content-list-item;
-  width: @width--post-content-list-item;
-  left: @left--post-content-list-item;
-  margin-right: @margin-right--post-content-list-item;
-  padding-right: @padding-right--post-content-list-item;
+.post-content ol,
+.post-content ul {
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
 }
 .post-content > p,
 .post-content > ul,
