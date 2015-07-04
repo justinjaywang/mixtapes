@@ -1,6 +1,4 @@
 <main class="page-main page-main--index">
-<% page.posts.each(function(post){ %>
-  <%- partial('_partials/postPreview', {post: post}) %>
-<% }) %>
+  <% page.posts.each(function(post){ %><%- partial('_partials/postPreview', {post: post}) %><% }) %>
 </main>
 <%- partial('_partials/page-footer') %>

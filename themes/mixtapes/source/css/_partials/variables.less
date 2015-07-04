@@ -67,12 +67,13 @@
 @font-size-px-base:    16.5px;
 @font-size-px-base-sm: 13.5px;
 // : font-size-applications
-@font-size--html:     @font-size-px-base;
-@font-size--html-sm:  @font-size-px-base-sm;
-@font-size--body:     @size-em-base;
-@font-size--h1:       @size-em-base;
-@font-size--h2:       @size-em-base;
-@font-size--headings: @size-em-base;
+@font-size--html:              @font-size-px-base;
+@font-size--html-sm:           @font-size-px-base-sm;
+@font-size--body:              @size-rem-base;
+@font-size--h1:                @size-rem-base;
+@font-size--h2:                @size-rem-base;
+@font-size--headings:          @size-rem-base;
+@font-size--postPreview-title: @font-size--body;
 // : font-family-variables
 @font-family-sans-serif:     "PT Sans", sans-serif;
 @font-family-serif:          "PT Serif", Georgia, serif;
@@ -96,9 +97,7 @@
 @font-weight--headings:  @font-weight-normal;
 @font-weight--post-meta: @font-weight-normal;
 // : line-height-variables
-@line-height-tight: 1.2; // TO DO: adjust these
-@line-height-base:  1.428;
-@line-height-loose: 1.5;
+@line-height-base:  1.4;
 // : line-height-applications
 @line-height--body:     @line-height-base;
 @line-height--h1:       @line-height-base;
@@ -125,9 +124,11 @@
 @width-screen-sm-max: (@width-screen-lg-min - 1);
 
 // layout
-@container-gutter:             1rem;
-@max-width--container--wide:   1200px;
-@max-width--container--narrow: 42rem; // a comfortable measure
+@container-gutter:             unit((100/9/2), %);
+@max-width--container--narrow: 45rem; // a comfortable measure
+@max-width--container--wide:   1280px;
+@width--container--wide:       100%;
+@postPreview-gutter:           unit((100/9/4), %);
 
 // spacing and miscellaneous
 // : utility
