@@ -1,9 +1,8 @@
-<main class="page-main page-main--index">
+<section class="page-index">
   <% var posts = get_posts({
     orderby: 'date',
     order: -1,
     count: 0
   }); %>
   <% posts.each(function(post){ %><%- partial('_partials/postPreview', {post: post}) %><% }) %>
-</main>
-<%- partial('_partials/page-footer') %>
+</section>

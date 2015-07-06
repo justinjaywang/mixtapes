@@ -1,25 +1,22 @@
 // colors
 // : variables
-@color-gray-darkest:  rgba(0,0,0,0.8);
-@color-gray-darker:   rgba(0,0,0,0.6);
+@color-gray-darker:   rgba(0,0,0,0.8);
 @color-gray-dark:     rgba(0,0,0,0.6);
-@color-gray:          rgba(0,0,0,0.36);
-@color-gray-light:    rgba(0,0,0,0.28);
-@color-gray-lighter:  rgba(0,0,0,0.15);
-@color-gray-lightest: rgba(0,0,0,0.06);
+@color-gray:          rgba(0,0,0,0.4);
+@color-gray-light:    rgba(0,0,0,0.1);
+@color-gray-lightest: rgba(0,0,0,0.05);
 @color-white:         rgb(255,255,255);
 // : applications
 @background-color--body:        @color-white;
-@color--body:                   @color-gray-darkest;
+@color--body:                   @color-gray-darker;
 @color--a:                      inherit;
-@color--h1:                     @color-gray-darkest;
-@color--h2:                     @color-gray-darkest;
-@color--page-header-list-item:  inherit;
+@color--h1:                     @color-gray-darker;
+@color--h2:                     @color-gray-darker;
 @color--post-content-list-item: @color-gray;
 @background-color--post-cover:  @color-gray-lightest;
 @color--post-cover-border:      @color-gray-lightest;
-@color--post-meta:              @color-gray-darkest;
-@color--divider:                @color--page-header-list-item;
+@color--post-meta:              @color-gray;
+@color--border-bottom--post:    @color-gray-light;
 
 // sizing
 @size-tera:         3;
@@ -85,15 +82,16 @@
 @font-family--h2:              @font-family-sans-serif;
 @font-family--headings:        @font-family-sans-serif;
 @font-family--post-meta:       @font-family-sans-serif;
-@font-family--post-date-after: @font-family-sans-serif;
+@font-family--post-meta-after: @font-family-sans-serif;
 @font-family--strong:          @font-family-sans-serif;
 // : font-weight-variables
 @font-weight-bold:      700;
+@font-weight-semibold:  600;
 @font-weight-normal:    400;
 @font-weight-semilight: 300;
 // : font-weight-applications
 @font-weight--body:      @font-weight-normal;
-@font-weight--h1:        @font-weight-bold;
+@font-weight--h1:        @font-weight-semibold;
 @font-weight--h2:        @font-weight-normal;
 @font-weight--headings:  @font-weight-normal;
 @font-weight--post-meta: @font-weight-normal;
@@ -128,7 +126,7 @@
 // layout
 @container-gutter:             unit((100/9/2), %);
 @max-width--container--narrow: 48rem; // a comfortable measure
-@max-width--container--wide:   960px;
+@max-width--container--wide:   60rem;
 @width--container--wide:       100%;
 @postPreview-gutter:           unit((100/9/4), %);
 
@@ -143,24 +141,29 @@
 @margin-top--page-header:               (@line-height * 3);
 @margin-bottom--page-header:            (@line-height * 3);
 @padding-right--page-header-list-item:  @size-rem-small;
+@padding-right--post-header-item:       @size-rem-nano;
+@margin-top--page-index:                (@line-height * 3);
+@margin-bottom--page-index:             (@line-height * 4.5);
 @margin-top--page-main:                 (@line-height * 3);
-@margin-bottom--page-main:              (@line-height * 6);
+@margin-bottom--page-main:              (@line-height * 3);
 @margin-top--postPreview:               (@line-height * 0);
 @margin-bottom--postPreview-cover:      (@line-height * 0.5);
 @margin-bottom--post-cover:             (@line-height * 1.5);
-@margin-top--post:                      (@line-height * 0);
-@margin-bottom--post:                   (@line-height * 6);
-@margin-top--page-footer:               (@margin-bottom--post - @margin-bottom--page-main);
+@margin-top--post:                      (@line-height * 0); // TO DO: clean up
+@margin-bottom--post:                   (@line-height * 3); // TO DO: clean up
+@padding-bottom--post:                  (@line-height * 3);
+@margin-top--page-footer:               (@margin-bottom--post - @margin-bottom--page-main); // TO DO: clean up footer
 @margin-bottom--page-footer:            (@line-height * 2);
-@margin-top--h1:                        (@line-height * 1);
+@margin-top--h1:                        (@line-height * 0);
 @margin-bottom--h1:                     ((@line-height * 2) - @computed-line-height--h1); // (@line-height * 1);
-@margin-top--h2:                        0;
+@margin-top--h2:                        (@line-height * 0);
 @margin-bottom--h2:                     (@line-height * 1);
 @margin-bottom--post-content-base:      (@line-height * 1);
+@margin-top--post-meta:                 (@line-height * 1);
 @padding-left--post-content-list:       2.4rem;
 @width--post-content-list-item:         2.4rem;
 @left--post-content-list-item:          -@width--post-content-list-item;
 @margin-right--post-content-list-item:  -@width--post-content-list-item;
 @padding-right--post-content-list-item: 0.6667rem;
-@content--post-date-after:              '\0020·\0020';
+@content--post-meta-after:              '\0020·\0020';
 @content--post-tag-after:               ',';
