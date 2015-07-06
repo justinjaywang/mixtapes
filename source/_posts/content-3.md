@@ -1,4 +1,4 @@
-title: Cooking music
+title: Cooking Music for When You're In the Kitchen Really Really Long Mixtape Title
 date: 2015-06-23 20:56:15
 tags:
 - test tag
