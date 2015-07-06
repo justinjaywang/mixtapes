@@ -1,9 +1,0 @@
-<section class="page-index">
-  <% var posts = get_posts({
-    query: {tags: page.tag},
-    orderby: 'date',
-    order: -1,
-    count: 0
-  }); %>
-  <% posts.each(function(post){ %><%- partial('_partials/postPreview', {post: post}) %><% }) %>
-</section>

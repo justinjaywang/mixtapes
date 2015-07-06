@@ -3,7 +3,7 @@
 @color-gray-darker:   rgba(0,0,0,0.8);
 @color-gray-dark:     rgba(0,0,0,0.6);
 @color-gray:          rgba(0,0,0,0.4);
-@color-gray-light:    rgba(0,0,0,0.1);
+@color-gray-light:    rgba(0,0,0,0.2);
 @color-gray-lightest: rgba(0,0,0,0.05);
 @color-white:         rgb(255,255,255);
 // : applications
@@ -62,9 +62,11 @@
 // typography
 // : font-size-variables
 @font-size-px-base:    16px;
+@font-size-px-base-md: 13.5px;
 @font-size-px-base-sm: 13.5px;
 // : font-size-applications
 @font-size--html:                   @font-size-px-base;
+@font-size--html-md:                @font-size-px-base-md;
 @font-size--html-sm:                @font-size-px-base-sm;
 @font-size--body:                   @size-rem-base;
 @font-size--h1:                     @size-rem-base;
@@ -103,9 +105,7 @@
 @line-height--h2:       @line-height-base;
 @line-height--headings: @line-height-base;
 // : letter-spacing-variables
-@letter-spacing-tight: -0.01em; // TO DO: adjust these
 @letter-spacing-base:  0;
-@letter-spacing-loose: 0.04em;
 // : letter-spacing-applications
 @letter-spacing--body:     @letter-spacing-base;
 @letter-spacing--h1:       @letter-spacing-base;
@@ -120,15 +120,16 @@
 @text-transform--h2: none;
 
 // screen widths
+@width-screen-md-min: 400px;
 @width-screen-lg-min: 768px;
-@width-screen-sm-max: (@width-screen-lg-min - 1);
+@width-screen-sm-max: (@width-screen-md-min - 1);
+@width-screen-md-max: (@width-screen-lg-min - 1);
 
 // layout
-@container-gutter:             unit((100/9/2), %);
-@max-width--container--narrow: 48rem; // a comfortable measure
-@max-width--container--wide:   60rem;
-@width--container--wide:       100%;
-@postPreview-gutter:           unit((100/9/4), %);
+@width--container:      100%;
+@max-width--container:  60rem;
+@container-gutter:      unit((100/9/2), %); // (@postPreview-gutter * 1.5);
+@postPreview-gutter:    @size-rem-large; // unit((100/9/4), %);
 
 // spacing and miscellaneous
 // : utility
@@ -149,11 +150,7 @@
 @margin-top--postPreview:               (@line-height * 0);
 @margin-bottom--postPreview-cover:      (@line-height * 0.5);
 @margin-bottom--post-cover:             (@line-height * 1.5);
-@margin-top--post:                      (@line-height * 0); // TO DO: clean up
-@margin-bottom--post:                   (@line-height * 3); // TO DO: clean up
 @padding-bottom--post:                  (@line-height * 3);
-@margin-top--page-footer:               (@margin-bottom--post - @margin-bottom--page-main); // TO DO: clean up footer
-@margin-bottom--page-footer:            (@line-height * 2);
 @margin-top--h1:                        (@line-height * 0);
 @margin-bottom--h1:                     ((@line-height * 2) - @computed-line-height--h1); // (@line-height * 1);
 @margin-top--h2:                        (@line-height * 0);

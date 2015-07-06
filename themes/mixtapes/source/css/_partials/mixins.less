@@ -47,6 +47,14 @@
   white-space: nowrap;
 }
 
+// line clamping
+.line-clamp(@n) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: @n;
+  -webkit-box-orient: vertical;
+}
+
 // drop shadows
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
