@@ -83,8 +83,10 @@ strong {
   padding-right: @container-gutter;
 }
 .container--narrow {
-  max-width: @max-width--container--narrow;
+  // max-width: @max-width--container--narrow;
   &:extend(.container);
+  width: @width--container--wide;
+  max-width: @max-width--container--wide;
 }
 .container--wide {
   width: @width--container--wide;
@@ -122,6 +124,13 @@ strong {
 .page-footer-list-item:not(:last-child) {
   padding-right: @padding-right--page-header-list-item;
 }
+.page-title {
+  // background: black; // TEMP
+  // color: white; // TEMP
+  // font-size: @size-rem-largest;
+  // font-weight: bold; // TEMP
+  // font-style: italic;
+}
 
 // post components
 .page-main {
@@ -129,23 +138,19 @@ strong {
   margin-bottom: @margin-bottom--page-main;
 }
 .postPreview {
-  margin-top: @margin-top--postPreview;
-  margin-bottom: @margin-bottom--postPreview;
   font-size: 0;
   display: inline-block;
   vertical-align: top;
-  .postPreview-width(4);
   margin-left: @postPreview-gutter;
-  &:nth-of-type(4n+1) {
-    margin-left: 0;
-  }
-}
-.postPreview-title {
-  font-size: @font-size--postPreview-title;
+  margin-bottom: @postPreview-gutter;
+  margin-top: 0;
 }
 .postPreview:first-of-type,
 .post:first-of-type {
   margin-top: 0;
+}
+.postPreview-title {
+  font-size: @font-size--postPreview-title;
 }
 .post {
   margin-top: @margin-top--post;
@@ -173,6 +178,7 @@ strong {
   color: @color--post-meta;
   font-family: @font-family--post-meta;
   font-weight: @font-weight--post-meta;
+  font-style: @font-style--post-meta;
 }
 .post-date:after {
   content: @content--post-date-after;
@@ -200,7 +206,6 @@ strong {
   left: @left--post-content-list-item;
   margin-right: @margin-right--post-content-list-item;
   padding-right: @padding-right--post-content-list-item;
-  // background: rgba(255,0,0,0.3); // TEMP
 }
 .post-content > p,
 .post-content > ul,
@@ -214,9 +219,21 @@ strong {
   html {
     font-size: @font-size--html-sm;
   }
+  .postPreview {
+    .postPreview-width(3);
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
 }
 // : large screens
 @media (min-width: @width-screen-lg-min) {
+  .postPreview {
+    .postPreview-width(4);
+    &:nth-of-type(4n+1) {
+      margin-left: 0;
+    }
+  }
 }
 
 // functions
