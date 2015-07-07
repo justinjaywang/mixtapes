@@ -25,7 +25,7 @@ body {
 // typography
 a {
   color: @color--a;
-  text-decoration: none; // TEMP
+  text-decoration: none;
 }
 h1 {
   font-family: @font-family--h1;
@@ -33,8 +33,6 @@ h1 {
   line-height: @line-height--h1;
   font-weight: @font-weight--h1;
   letter-spacing: @letter-spacing--h1;
-  margin-top: @margin-top--h1;
-  margin-bottom: @margin-bottom--h1;
   font-style: @font-style--h1;
   text-transform: @text-transform--h1;
 }
@@ -44,8 +42,6 @@ h2 {
   line-height: @line-height--h2;
   font-weight: @font-weight--h2;
   letter-spacing: @letter-spacing--h2;
-  margin-top: @margin-top--h2;
-  margin-bottom: @margin-bottom--h2;
   font-style: @font-style--h2;
   text-transform: @text-transform--h2;
 }
@@ -120,7 +116,7 @@ strong {
   display: inline-block;
   vertical-align: top;
   margin-left: @postPreview-gutter;
-  margin-bottom: @postPreview-gutter;
+  margin-bottom: @margin-bottom--postPreview;
   margin-top: 0;
 }
 .postPreview:first-of-type,
@@ -149,8 +145,11 @@ strong {
 .post-cover {
   margin-bottom: @margin-bottom--post-cover;
 }
+.post-header {
+  margin-bottom: @margin-bottom--post-header;
+}
 .post-header > * {
-  display: inline-block;
+  display: inline;
 }
 .post-header > *:not(:last-child) {
   padding-right: @padding-right--post-header-item;
@@ -174,7 +173,7 @@ strong {
   padding-left: @padding-left--post-content-list;
   counter-reset: decimal-counter;
 }
-.post-content ol li:before, // TO DO: clean up
+.post-content ol li:before,
 .post-content ul li:before {
   content: counter(decimal-counter);
   counter-increment: decimal-counter;
@@ -187,8 +186,12 @@ strong {
   margin-right: @margin-right--post-content-list-item;
   padding-right: @padding-right--post-content-list-item;
 }
-.post-content > p {
+.post-content > .post-subtitle {
+  margin-top: (@line-height * -1);
   margin-bottom: @margin-bottom--post-content-base;
+}
+.post-content a {
+  text-decoration: underline;
 }
 
 // responsiveness

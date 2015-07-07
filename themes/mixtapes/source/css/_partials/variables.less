@@ -15,7 +15,7 @@
 @color--post-content-list-item: @color-gray;
 @background-color--post-cover:  @color-gray-lightest;
 @color--post-cover-border:      @color-gray-lightest;
-@color--post-meta:              @color-gray;
+@color--post-meta:              @color-gray-darker;
 @color--border-bottom--post:    @color-gray-light;
 
 // sizing
@@ -65,19 +65,18 @@
 @font-size-px-base-md: 13.5px;
 @font-size-px-base-sm: 13.5px;
 // : font-size-applications
-@font-size--html:                   @font-size-px-base;
-@font-size--html-md:                @font-size-px-base-md;
-@font-size--html-sm:                @font-size-px-base-sm;
-@font-size--body:                   @size-rem-base;
-@font-size--h1:                     @size-rem-base;
-@font-size--h2:                     @size-rem-base;
-@font-size--headings:               @size-rem-base;
-@font-size--postPreview-title:      @font-size--body;
-// @font-size--post-content-list-item: @size-rem-small; // TO DO: clean up
+@font-size--html:              @font-size-px-base;
+@font-size--html-md:           @font-size-px-base-md;
+@font-size--html-sm:           @font-size-px-base-sm;
+@font-size--body:              @size-rem-base;
+@font-size--h1:                @size-rem-base;
+@font-size--h2:                @size-rem-base;
+@font-size--headings:          @size-rem-base;
+@font-size--postPreview-title: @font-size--body;
 // : font-family-variables
-@font-family-sans-serif:     "Source Sans Pro", Helvetica, sans-serif;
-@font-family-serif:          Georgia, serif;
-@font-family-monospace:      "Inconsolata", "PT Mono", Consolas, "Inconsolata", monospace;
+@font-family-sans-serif: "Source Sans Pro", Helvetica, sans-serif;
+@font-family-serif:      Georgia, serif;
+@font-family-monospace:  Consolas, monospace;
 // : font-family-applications
 @font-family--body:            @font-family-sans-serif;
 @font-family--h1:              @font-family-sans-serif;
@@ -114,7 +113,7 @@
 // : font-style-applications
 @font-style--h1:        none;
 @font-style--h2:        none;
-@font-style--post-meta: none;
+@font-style--post-meta: italic;
 // : text-transform-applications
 @text-transform--h1: none;
 @text-transform--h2: none;
@@ -126,10 +125,10 @@
 @width-screen-md-max: (@width-screen-lg-min - 1);
 
 // layout
-@width--container:      100%;
-@max-width--container:  60rem;
-@container-gutter:      unit((100/9/2), %); // (@postPreview-gutter * 1.5);
-@postPreview-gutter:    @size-rem-large; // unit((100/9/4), %);
+@width--container:     100%;
+@max-width--container: 960px; // 60rem;
+@container-gutter:     unit((100/9/2), %); // (@postPreview-gutter * 1.5);
+@postPreview-gutter:   @size-rem-larger; // unit((100/9/4), %);
 
 // spacing and miscellaneous
 // : utility
@@ -148,13 +147,11 @@
 @margin-top--page-main:                 (@line-height * 3);
 @margin-bottom--page-main:              (@line-height * 3);
 @margin-top--postPreview:               (@line-height * 0);
+@margin-bottom--postPreview:            (@line-height * 1);
 @margin-bottom--postPreview-cover:      (@line-height * 0.5);
 @margin-bottom--post-cover:             (@line-height * 1.5);
+@margin-bottom--post-header:            (@line-height * 1);
 @padding-bottom--post:                  (@line-height * 3);
-@margin-top--h1:                        (@line-height * 0);
-@margin-bottom--h1:                     ((@line-height * 2) - @computed-line-height--h1); // (@line-height * 1);
-@margin-top--h2:                        (@line-height * 0);
-@margin-bottom--h2:                     (@line-height * 1);
 @margin-bottom--post-content-base:      (@line-height * 1);
 @margin-top--post-meta:                 (@line-height * 1);
 @padding-left--post-content-list:       2.4rem;
