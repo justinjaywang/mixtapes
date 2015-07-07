@@ -3,7 +3,6 @@ date: 2015-06-23 17:12:35
 tags:
 - test tag
 - another tag
-artists:
 ---
 
 - Yo La Tengo - Little Honda (I Can Hear the Heart Beating as One)
